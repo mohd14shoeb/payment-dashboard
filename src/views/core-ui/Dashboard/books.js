@@ -1,0 +1,33 @@
+import React from 'react';
+import { Query } from 'react-apollo';
+import gql from 'graphql-tag';
+
+
+const Books = () => (
+    <Query query={gql`
+        {
+            books {
+                id
+                title
+                author
+            }
+        }
+    `}>
+        {({loading, error, data}) =>{
+            if(loading)
+            {
+                return <p>Loading....</p>;
+            }
+            if(error)
+            {
+                return <p>Error :(</p>;
+            }
+            return data.books.map(({id,title,author}) => {
+                return <div key={id}>
+                <p>{`${title} by ${author}`}</p>
+                </div>;
+            });
+        }}
+    </Query>
+);
+export default Books;
