@@ -4,8 +4,8 @@ import {  DropdownItem, DropdownMenu, DropdownToggle, Nav, NavItem } from 'react
 import PropTypes from 'prop-types';
 
 import {  AppHeaderDropdown, AppNavbarBrand, AppSidebarToggler } from '@coreui/react';
-import logo from '../../../assets/img/brand/logo.svg'
-import sygnet from '../../../assets/img/brand/sygnet.svg'
+import logo from '../../../assets/core-ui/img/brand/logo.svg'
+import sygnet from '../../../assets/core-ui/img/brand/sygnet.svg'
 
 const propTypes = {
   children: PropTypes.node,

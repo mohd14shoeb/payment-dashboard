@@ -8,6 +8,7 @@ import {
 
   Row,
 } from 'reactstrap';
+import Books from "./books";
 
 
 class Dashboard extends Component {
@@ -37,6 +38,7 @@ class Dashboard extends Component {
             </CardTitle>
             </CardHeader>
             <CardBody>
+              <Books/>
 
               </CardBody>
             </Card>
