@@ -9,5 +9,5 @@ npm start
 ```
 
 ### login 
-email: admin@admin.com
-password: 123456789
+* Email: `admin@admin.com`
+* password: `123456789`
