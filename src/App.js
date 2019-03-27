@@ -53,9 +53,11 @@ class App extends Component {
 
   render() {
     let isLoggedIn = this.state.isLoggedIn;
-    const isPath  = window.location.pathname === "/login";
-    if (isPath && isLoggedIn) {
-      window.location = "/";
+    if ((window.location.pathname === "/login") && isLoggedIn) {
+      window.location = "/dashboard";
+    }
+    if ((window.location.pathname === "/") && isLoggedIn) {
+      window.location = "/dashboard";
     }
     return (
       <BrowserRouter>
