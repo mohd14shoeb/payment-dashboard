@@ -16,16 +16,14 @@ import {
   Tables,
   Tabs,
   Tooltips,
-} from './Base';
+} from './../core-ui/Base';
 
-import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './Buttons';
-import Charts from './Charts';
+import { ButtonDropdowns, ButtonGroups, Buttons, BrandButtons } from './../core-ui/Buttons';
 import Dashboard from './Dashboard';
-import { CoreUIIcons, Flags, FontAwesome, SimpleLineIcons } from './Icons';
-import { Alerts, Badges, Modals } from './Notifications';
+import { CoreUIIcons, Flags, FontAwesome, SimpleLineIcons } from './../core-ui/Icons';
+import { Alerts, Badges, Modals } from './../core-ui/Notifications';
 import { Login, Page404, Page500, Register } from './Pages';
-import { Colors, Typography } from './Theme';
-import Widgets from './Widgets';
+import { Colors, Typography } from './../core-ui/Theme';
 
 export {
   Badges,
@@ -48,9 +46,7 @@ export {
   Tooltips,
   Tabs,
   Tables,
-  Charts,
   Dashboard,
-  Widgets,
   Jumbotrons,
   Switches,
   ProgressBar,

@@ -22,9 +22,8 @@ import {
 } from 'reactstrap';
 import { CustomTooltips } from '@coreui/coreui-plugin-chartjs-custom-tooltips';
 import { getStyle, hexToRgba } from '@coreui/coreui/dist/js/coreui-utilities';
-import Books from './books';
 
-const Widget03 = lazy(() => import('../../views/core-ui/Widgets/Widget03'));
+const Widget03 = lazy(() => import('./../Widgets/Widget03'));
 
 const brandPrimary = getStyle('--primary')
 const brandSuccess = getStyle('--success')
@@ -486,7 +485,6 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row>
           <Col>
-            <Books/>
           </Col>
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-info">

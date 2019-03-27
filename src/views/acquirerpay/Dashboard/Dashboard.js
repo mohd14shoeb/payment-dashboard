@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   Card,
   CardBody,
@@ -15,10 +15,8 @@ class Dashboard extends Component {
     super(props);
 
 
-    this.state = {
-    };
+    this.state = {};
   }
-
 
 
   loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
@@ -28,15 +26,16 @@ class Dashboard extends Component {
     return (
       <div className="animated fadeIn">
         <Row>
-        <Col>
+          <Col>
             <Card>
 
-<CardHeader>
-            <CardTitle>
-              <h2>Dashboard</h2>
-            </CardTitle>
-            </CardHeader>
-            <CardBody>
+              <CardHeader>
+                <CardTitle>
+                  <h2>Dashboard</h2>
+                </CardTitle>
+              </CardHeader>
+              <CardBody>
+                Future conents comes here.
 
               </CardBody>
             </Card>

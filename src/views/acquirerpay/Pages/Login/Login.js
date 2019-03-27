@@ -38,7 +38,7 @@ class Login extends Component {
   };
   loginFunction = () =>
   {
-    if(this.state.email === 'admin@admin.com' && this.state.password === '123456')
+    if(this.state.email === 'admin@admin.com' && this.state.password === '123456789')
     {
       let token = 'Login_token_for_coreui'
       localStorage.setItem('id_token', token);
