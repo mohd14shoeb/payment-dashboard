@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Alert, Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
 
-class Login extends Component {
+class ForgotPassword extends Component {
 
   constructor(props) {
     super(props);
@@ -75,4 +75,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default ForgotPassword;
