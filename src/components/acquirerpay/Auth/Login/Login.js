@@ -1,6 +1,20 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Alert, Button, Card, CardBody, CardGroup, Col, Container, Form, Input, InputGroup, InputGroupAddon, InputGroupText, Row } from 'reactstrap';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {
+  Alert,
+  Button,
+  Card,
+  CardBody,
+  CardGroup,
+  Col,
+  Container,
+  Form,
+  Input,
+  InputGroup,
+  InputGroupAddon,
+  InputGroupText,
+  Row
+} from 'reactstrap';
 
 class Login extends Component {
 
@@ -12,22 +26,21 @@ class Login extends Component {
       errors: {}
     };
   }
+
   handleChange = (e: any) => {
-    const { name, value } = e.target;
+    const {name, value} = e.target;
     this.setState({
       [name]: value
     });
     let errors = {}
-    if(name === 'email')
-    {
+    if (name === 'email') {
       if (!value) {
         errors.email = 'Required';
       } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)) {
         errors.email = 'Invalid email address';
       }
     }
-    if(name === 'password')
-    {
+    if (name === 'password') {
       if (!value) {
         errors.password = 'Required';
       }
@@ -36,16 +49,12 @@ class Login extends Component {
       errors: errors
     });
   };
-  loginFunction = () =>
-  {
-    if(this.state.email === 'admin@admin.com' && this.state.password === '123456789')
-    {
+  loginFunction = () => {
+    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789') {
       let token = 'Login_token_for_coreui'
       localStorage.setItem('id_token', token);
       window.location = "/";
-    }
-    else
-    {
+    } else {
       let errors = {}
       errors.password = 'Username or password is incorrect.';
       this.setState({
@@ -53,8 +62,9 @@ class Login extends Component {
       });
     }
   };
+
   render() {
-    const { password, email } = this.state;
+    const {password, email} = this.state;
     return (
       <div className="app flex-row align-items-center">
         <Container>
@@ -72,7 +82,8 @@ class Login extends Component {
                             <i className="icon-user"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="text" placeholder="Email" autoComplete="Email"  name="email" value={email} onChange={this.handleChange} />
+                        <Input type="text" placeholder="Email" autoComplete="Email" name="email" value={email}
+                               onChange={this.handleChange}/>
                       </InputGroup>
                       {this.state.errors.email && <Alert color="warning">{this.state.errors.email}</Alert>}
                       <InputGroup className="mb-4">
@@ -81,7 +92,8 @@ class Login extends Component {
                             <i className="icon-lock"></i>
                           </InputGroupText>
                         </InputGroupAddon>
-                        <Input type="password" placeholder="Password" autoComplete="current-password" name="password" value={password} onChange={this.handleChange} />
+                        <Input type="password" placeholder="Password" autoComplete="current-password" name="password"
+                               value={password} onChange={this.handleChange}/>
                       </InputGroup>
                       {this.state.errors.password && <Alert color="warning">{this.state.errors.password}</Alert>}
                       <Row>
@@ -97,7 +109,7 @@ class Login extends Component {
                     </Form>
                   </CardBody>
                 </Card>
-                <Card className="text-white bg-primary py-5 d-md-down-none" style={{ width: '44%' }}>
+                <Card className="text-white bg-primary py-5 d-md-down-none" style={{width: '44%'}}>
                   <CardBody className="text-center">
                     <div>
                       <h2>Sign up</h2>
