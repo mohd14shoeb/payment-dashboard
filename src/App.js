@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
-// import { Query } from 'react-apollo';
-// import gql from 'graphql-tag';
 import './App.scss';
 
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
