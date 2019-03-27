@@ -7,14 +7,14 @@ import './App.scss';
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./containers/acquirerpay/DefaultLayout'));
+const DefaultLayout = React.lazy(() => import('./layouts/acquirerpay/DefaultLayout'));
 
 // Pages
-const Login = React.lazy(() => import('./views/acquirerpay/Pages/Login'));
-const ForgotPassword = React.lazy(() => import('./views/acquirerpay/Pages/ForgotPassword'));
-const Register = React.lazy(() => import('./views/acquirerpay/Pages/Register'));
-const Page404 = React.lazy(() => import('./views/acquirerpay/Pages/Page404'));
-const Page500 = React.lazy(() => import('./views/acquirerpay/Pages/Page500'));
+const Login = React.lazy(() => import('./components/acquirerpay/Auth/Login'));
+const ForgotPassword = React.lazy(() => import('./components/acquirerpay/Auth/ForgotPassword'));
+const Register = React.lazy(() => import('./components/acquirerpay/Auth/Register'));
+const Page404 = React.lazy(() => import('./components/acquirerpay/Errors/Page404'));
+const Page500 = React.lazy(() => import('./components/acquirerpay/Errors/Page500'));
 
 
 
