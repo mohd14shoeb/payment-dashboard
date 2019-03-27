@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {
   Alert,
   Button,
@@ -44,7 +44,9 @@ class ForgotPassword extends Component {
     });
   };
   loginFunction = () => {
-    window.location = "/";
+    // window.location = "/";
+    this.props.history.push('/')
+
   };
 
   render() {
@@ -91,4 +93,4 @@ class ForgotPassword extends Component {
   }
 }
 
-export default ForgotPassword;
+export default withRouter(ForgotPassword);

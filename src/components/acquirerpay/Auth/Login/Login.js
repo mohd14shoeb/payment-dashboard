@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, withRouter} from 'react-router-dom';
 import {
   Alert,
   Button,
@@ -53,7 +53,9 @@ class Login extends Component {
     if (this.state.email === 'admin@admin.com' && this.state.password === '123456789') {
       let token = 'Login_token_for_coreui'
       localStorage.setItem('id_token', token);
-      window.location = "/";
+      // window.location = "/";
+      this.props.history.push('/dashboard')
+
     } else {
       let errors = {}
       errors.password = 'Username or password is incorrect.';
@@ -130,4 +132,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withRouter(Login);

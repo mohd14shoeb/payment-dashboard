@@ -1,5 +1,5 @@
 import React, {Component, Suspense} from 'react';
-import {Redirect, Route, Switch} from 'react-router-dom';
+import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import {Container} from 'reactstrap';
 
 import {
@@ -30,7 +30,10 @@ class DefaultLayout extends Component {
   signOut(e) {
     e.preventDefault();
     localStorage.removeItem('id_token');
-    window.location = "/login";
+    // window.location = "/login";
+    // this.props.('/login')
+    this.props.history.push('/login')
+
   }
 
   render() {
@@ -89,4 +92,4 @@ class DefaultLayout extends Component {
   }
 }
 
-export default DefaultLayout;
+export default withRouter(DefaultLayout);

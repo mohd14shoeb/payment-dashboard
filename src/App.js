@@ -49,9 +49,13 @@ class App extends Component {
     let isLoggedIn = this.state.isLoggedIn;
     if ((window.location.pathname === "/login") && isLoggedIn) {
       window.location = "/dashboard";
+      // this.props.history.push('/dashboard')
+
     }
     if ((window.location.pathname === "/") && isLoggedIn) {
       window.location = "/dashboard";
+      // this.props.history.push('/dashboard')
+
     }
     return (
       <BrowserRouter>
