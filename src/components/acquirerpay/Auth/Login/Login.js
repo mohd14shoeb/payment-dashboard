@@ -21,8 +21,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: "",
-      password: "",
+      email: "admin@admin.com",
+      password: "123456789",
       errors: {}
     };
   }
@@ -50,11 +50,12 @@ class Login extends Component {
     });
   };
   loginFunction = () => {
-    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789') {
+    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789' ) {
       let token = 'Login_token_for_coreui'
       localStorage.setItem('id_token', token);
-      // window.location = "/";
-      this.props.history.push('/dashboard')
+      window.location = "/";
+      // to improve exprience use history push
+      // this.props.history.push('/dashboard')
 
     } else {
       let errors = {}
