@@ -5,7 +5,7 @@ import './App.scss';
 const loading = () => <div className="animated fadeIn pt-3 text-center">Loading...</div>;
 
 // Containers
-const DefaultLayout = React.lazy(() => import('./layouts/acquirerpay'));
+const DefaultLayout = React.lazy(() => import('./layouts'));
 
 // Pages
 const Login = React.lazy(() => import('./components/acquirerpay/Auth/Login'));
