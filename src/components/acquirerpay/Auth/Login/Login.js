@@ -15,7 +15,6 @@ import {
   InputGroupText,
   Row
 } from 'reactstrap';
-import {isEmpty} from "underscore"
 import login from "../../../../containers/auth/login"
 
 
@@ -60,8 +59,16 @@ class Login extends Component {
    */
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789')
+    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789') {
       login(this.state.email, this.state.password)
+    } else {
+      let errors = {}
+      errors.password = 'Username or password is incorrect.';
+      this.setState({
+        errors: errors
+      });
+    }
+
 
   }
 

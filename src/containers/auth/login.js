@@ -1,7 +1,3 @@
-import {isEmpty} from "underscore"
-
-
-
 export default function login(email, password) {
   if ( email && password) {
     let token = 'Login_token_for_coreui'
@@ -11,10 +7,6 @@ export default function login(email, password) {
     // this.props.history.push('/dashboard')
 
   } else {
-    // let errors = {}
-    // errors.password = 'Username or password is incorrect.';
-    // this.setState({
-    //   errors: errors
-    // });
+    console.log('something gone wrong')
   }
 }

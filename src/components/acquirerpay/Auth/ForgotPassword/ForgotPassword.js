@@ -50,7 +50,7 @@ class ForgotPassword extends Component {
   handleSubmit(event)
   {
     event.preventDefault()
-    // forgotPassword(this.state.email)
+    forgotPassword(this.state.email)
   }
 
 
