@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Link, withRouter} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import {
   Alert,
   Button,
@@ -15,14 +15,17 @@ import {
   InputGroupText,
   Row
 } from 'reactstrap';
+import {isEmpty} from "underscore"
+import login from "../../../../containers/auth/login"
+
 
 class Login extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      email: "admin@admin.com",
-      password: "123456789",
+      email: "",
+      password: "",
       errors: {}
     };
   }
@@ -49,22 +52,18 @@ class Login extends Component {
       errors: errors
     });
   };
-  loginFunction = () => {
-    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789' ) {
-      let token = 'Login_token_for_coreui'
-      localStorage.setItem('id_token', token);
-      window.location = "/";
-      // to improve exprience use history push
-      // this.props.history.push('/dashboard')
 
-    } else {
-      let errors = {}
-      errors.password = 'Username or password is incorrect.';
-      this.setState({
-        errors: errors
-      });
-    }
-  };
+
+  /**
+   * Submit Handler
+   * @param e
+   */
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.state.email === 'admin@admin.com' && this.state.password === '123456789')
+      login(this.state.email, this.state.password)
+
+  }
 
   render() {
     const {password, email} = this.state;
@@ -76,7 +75,7 @@ class Login extends Component {
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
-                    <Form>
+                    <Form onSubmit={this.handleSubmit.bind()} method={'post'}>
                       <h1>Login</h1>
                       <p className="text-muted">Sign In to your account</p>
                       <InputGroup className="mb-3">
@@ -101,7 +100,7 @@ class Login extends Component {
                       {this.state.errors.password && <Alert color="warning">{this.state.errors.password}</Alert>}
                       <Row>
                         <Col xs="6">
-                          <Button color="primary" className="px-4" onClick={this.loginFunction}>Login</Button>
+                          <Button color="primary" type="submit" className="px-4">Login</Button>
                         </Col>
                         <Col xs="6" className="text-right">
                           <Link to="/forgot-password">
@@ -133,4 +132,4 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login);
+export default Login;

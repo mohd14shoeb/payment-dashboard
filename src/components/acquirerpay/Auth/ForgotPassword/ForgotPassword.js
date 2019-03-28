@@ -16,6 +16,8 @@ import {
   Row
 } from 'reactstrap';
 
+import forgotPassword from "../../../../containers/auth/forgotPassword"
+
 class ForgotPassword extends Component {
 
   constructor(props) {
@@ -43,11 +45,14 @@ class ForgotPassword extends Component {
       errors: errors
     });
   };
-  loginFunction = () => {
-    // window.location = "/";
-    this.props.history.push('/')
 
-  };
+
+  handleSubmit(event)
+  {
+    event.preventDefault()
+    // forgotPassword(this.state.email)
+  }
+
 
   render() {
     const {email} = this.state;
@@ -59,7 +64,7 @@ class ForgotPassword extends Component {
               <CardGroup>
                 <Card className="p-4">
                   <CardBody>
-                    <Form>
+                    <Form onSubmit={this.handleSubmit.bind()} method={'post'}>
                       <h1>Forgot password</h1>
                       <p className="text-muted">Enter the Email Address. You will receive an email with a link to reset
                         your password.</p>
@@ -74,11 +79,14 @@ class ForgotPassword extends Component {
                       </InputGroup>
                       {this.state.errors.email && <Alert color="warning">{this.state.errors.email}</Alert>}
                       <Row>
-                        <Col xs="6">
-                          <Button color="primary" className="px-4" onClick={this.loginFunction}>Login</Button>
+                        <Col xs="12">
+                          <Button color="primary" className="px-4 btn-block" type="submit">Email password reset link</Button>
                         </Col>
-                        <Col xs="6" className="text-right">
-                          <Link to="/login">Remeber the password?</Link>
+
+                      </Row>
+                      <Row className="mt-4">
+                        <Col xs="12" className="text-center">
+                          <Link to="/login" className="btn-link">Remember the password?</Link>
                         </Col>
                       </Row>
                     </Form>

@@ -2,6 +2,10 @@ import React, {Component, Suspense} from 'react';
 import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import {Container} from 'reactstrap';
 
+import logout from "../containers/auth/logout";
+import {loading} from "./../containers/layouts";
+
+
 import {
   AppAside,
   AppBreadcrumb,
@@ -25,23 +29,15 @@ const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
 
-  loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
 
-  signOut(e) {
-    e.preventDefault();
-    localStorage.removeItem('id_token');
-    // window.location = "/login";
-    // this.props.('/login')
-    this.props.history.push('/login')
 
-  }
 
   render() {
     return (
       <div className="app">
         <AppHeader fixed>
-          <Suspense fallback={this.loading()}>
-            <DefaultHeader onLogout={e => this.signOut(e)}/>
+          <Suspense fallback={loading()}>
+            <DefaultHeader onLogout={e => logout(e)}/>
           </Suspense>
         </AppHeader>
         <div className="app-body">
@@ -57,7 +53,7 @@ class DefaultLayout extends Component {
           <main className="main">
             <AppBreadcrumb appRoutes={routes}/>
             <Container fluid>
-              <Suspense fallback={this.loading()}>
+              <Suspense fallback={loading()}>
                 <Switch>
                   {routes.map((route, idx) => {
                     return route.component ? (
@@ -77,13 +73,13 @@ class DefaultLayout extends Component {
             </Container>
           </main>
           <AppAside fixed>
-            <Suspense fallback={this.loading()}>
+            <Suspense fallback={loading()}>
               <DefaultAside/>
             </Suspense>
           </AppAside>
         </div>
         <AppFooter>
-          <Suspense fallback={this.loading()}>
+          <Suspense fallback={loading()}>
             <DefaultFooter/>
           </Suspense>
         </AppFooter>
