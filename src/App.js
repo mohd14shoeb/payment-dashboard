@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Route, Switch, Redirect, BrowserRouter} from 'react-router-dom';
 import './App.scss';
 
-import {loading} from "./containers/layouts";
+import {loading} from "./components/layouts";
 
 
 
@@ -10,7 +10,7 @@ import {loading} from "./containers/layouts";
 const DefaultLayout = React.lazy(() => import('./layouts'));
 
 // Pages
-const Login = React.lazy(() => import('./components/acquirerpay/Auth/Login'));
+const Login = React.lazy(() => import('./containers/auth/login'));
 const ForgotPassword = React.lazy(() => import('./components/acquirerpay/Auth/ForgotPassword'));
 const Register = React.lazy(() => import('./components/acquirerpay/Auth/Register'));
 const Page404 = React.lazy(() => import('./components/acquirerpay/Errors/Page404'));

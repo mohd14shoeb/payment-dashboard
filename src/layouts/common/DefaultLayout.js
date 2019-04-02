@@ -2,8 +2,8 @@ import React, {Component, Suspense} from 'react';
 import {Redirect, Route, Switch, withRouter} from 'react-router-dom';
 import {Container} from 'reactstrap';
 
-import logout from "../containers/auth/logout";
-import {loading} from "./../containers/layouts";
+import logout from "../../containers/auth/logout";
+import {loading} from "./../../components/layouts";
 
 
 import {
@@ -19,9 +19,9 @@ import {
   AppSidebarNav,
 } from '@coreui/react';
 // sidebar nav config
-import navigation from '../_nav';
+import navigation from '../../_nav';
 // routes config
-import routes from '../routes';
+import routes from '../../routes';
 
 const DefaultAside = React.lazy(() => import('./DefaultAside'));
 const DefaultFooter = React.lazy(() => import('./DefaultFooter'));

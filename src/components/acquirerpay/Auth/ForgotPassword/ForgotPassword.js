@@ -28,7 +28,7 @@ class ForgotPassword extends Component {
     };
   }
 
-  handleChange = (e: any) => {
+  handleChange = (e) => {
     const {name, value} = e.target;
     this.setState({
       [name]: value
