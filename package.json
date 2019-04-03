@@ -60,10 +60,14 @@
     "test:debug": "react-scripts --inspect-brk test --runInBand",
     "eject": "react-scripts eject",
     "format": "prettier --write \"src/**/*.js\"",
-    "precommit": "lint-staged"
+    "precommit": "npm run lint:staged",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx}": [
+    "*.js": [
       "eslint --fix",
       "git add"
     ]
