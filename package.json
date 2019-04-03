@@ -40,12 +40,9 @@
     "underscore": "^1.9.1"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
     "eslint-config-airbnb": "^17.1.0",
-    "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-react": "^7.12.4",
     "husky": "^0.14.3",
     "lint-staged": "^8.1.5",
@@ -64,11 +61,12 @@
     "lint": "npm run lint:js",
     "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
     "lint:js": "npm run lint:eslint -- . ",
-    "lint:staged": "lint-staged"
+    "lint:staged": "lint-staged",
+    "pretty": "prettier --write --tab-width 4 \"**/*.js\""
   },
   "lint-staged": {
-    "*.js": [
-      "eslint",
+    "**/*.js": [
+      "npm run pretty",
       "git add"
     ]
   },

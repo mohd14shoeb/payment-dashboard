@@ -1,3 +1,5 @@
-import React from "react";
+import React from 'react';
 
-export const loading = () => <div className="animated fadeIn pt-1 text-center">Loading...</div>
+export const loading = () => (
+    <div className="animated fadeIn pt-1 text-center">Loading...</div>
+);
