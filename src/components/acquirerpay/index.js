@@ -1,4 +1,4 @@
-import Login from './Auth/Login/Login';
+import Login from './Auth/Login';
 import ForgotPassword from './Auth/ForgotPassword/ForgotPassword';
 import Register from './Auth/Register/Register';
 import Page500 from './Errors/Page500/Page500';
