@@ -10,22 +10,25 @@ import {
     Row
 } from 'reactstrap';
 
-class Page401 extends Component {
+class Page500Container extends Component {
     render() {
         return (
             <div className="app flex-row align-items-center">
                 <Container>
                     <Row className="justify-content-center">
                         <Col md="6">
-                            <div className="clearfix">
+                            <span className="clearfix">
                                 <h1 className="float-left display-3 mr-4">
-                                    401
+                                    500
                                 </h1>
-                                <h4 className="pt-3">Oops! You're lost.</h4>
+                                <h4 className="pt-3">
+                                    Houston, we have a problem!
+                                </h4>
                                 <p className="text-muted float-left">
-                                    The page you are looking for was not found.
+                                    The page you are looking for is temporarily
+                                    unavailable.
                                 </p>
-                            </div>
+                            </span>
                             <InputGroup className="input-prepend">
                                 <InputGroupAddon addonType="prepend">
                                     <InputGroupText>
@@ -49,4 +52,4 @@ class Page401 extends Component {
     }
 }
 
-export default Page401;
+export default Page500Container;

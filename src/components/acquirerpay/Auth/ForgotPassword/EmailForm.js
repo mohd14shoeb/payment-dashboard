@@ -16,9 +16,7 @@ import {
     Row
 } from 'reactstrap';
 
-import forgotPassword from '../../../../containers/auth/forgotPassword';
-
-class ForgotPassword extends Component {
+class EmailForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -49,7 +47,7 @@ class ForgotPassword extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        // forgotPassword(this.state.email)
+        // forgotPasswordContainer(this.state.email)
     }
 
     render() {
@@ -129,4 +127,4 @@ class ForgotPassword extends Component {
     }
 }
 
-export default withRouter(ForgotPassword);
+export default withRouter(EmailForm);

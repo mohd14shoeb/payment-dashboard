@@ -1,8 +1,15 @@
-import Login from './Auth/Login';
-import ForgotPassword from './Auth/ForgotPassword/ForgotPassword';
-import Register from './Auth/Register/Register';
-import Page500 from './Errors/Page500/Page500';
-import Page404 from './Errors/Page404/Page404';
-import Page401 from './Errors/Page401/Page401';
+import LoginContainer from './Auth/Login/LoginContainer';
+import ForgotPassword from './Auth/ForgotPassword/EmailForm';
+import RegisterForm from './Auth/Register/RegisterForm';
+import Page500Container from './Errors/Page500/Page500Container';
+import Page404Container from './Errors/Page404/Page404Container';
+import Page401Container from './Errors/Page401/Page401Container';
 
-export { Login, ForgotPassword, Page401, Page404, Page500, Register };
+export {
+    LoginContainer,
+    ForgotPassword,
+    Page401Container,
+    Page404Container,
+    Page500Container,
+    RegisterForm
+};

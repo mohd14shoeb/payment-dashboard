@@ -2,7 +2,6 @@ import React, { Component, Suspense } from 'react';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
-import logout from '../../containers/auth/logout';
 import { loading } from './../../components/layouts';
 
 import {
@@ -27,12 +26,16 @@ const DefaultFooter = React.lazy(() => import('./DefaultFooter'));
 const DefaultHeader = React.lazy(() => import('./DefaultHeader'));
 
 class DefaultLayout extends Component {
+    logout() {
+        window.location = '/';
+        localStorage.removeItem('id_token');
+    }
     render() {
         return (
             <div className="app">
                 <AppHeader fixed>
                     <Suspense fallback={loading()}>
-                        <DefaultHeader onLogout={e => logout(e)} />
+                        <DefaultHeader onLogout={e => this.logout(e)} />
                     </Suspense>
                 </AppHeader>
                 <div className="app-body">

@@ -9,19 +9,19 @@ const DefaultLayout = React.lazy(() => import('./layouts'));
 
 // Pages
 const Login = React.lazy(() =>
-    import('./components/acquirerpay/Auth/Login/Index')
+    import('./components/acquirerpay/Auth/Login/LoginContainer')
 );
 const ForgotPassword = React.lazy(() =>
-    import('./components/acquirerpay/Auth/ForgotPassword')
+    import('./components/acquirerpay/Auth/ForgotPassword/EmailForm')
 );
 const Register = React.lazy(() =>
-    import('./components/acquirerpay/Auth/Register')
+    import('./components/acquirerpay/Auth/Register/RegisterForm')
 );
 const Page404 = React.lazy(() =>
-    import('./components/acquirerpay/Errors/Page404')
+    import('./components/acquirerpay/Errors/Page404/Page404Container')
 );
 const Page500 = React.lazy(() =>
-    import('./components/acquirerpay/Errors/Page500')
+    import('./components/acquirerpay/Errors/Page500/Page500Container')
 );
 
 const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (

@@ -10,7 +10,7 @@ import {
     Row
 } from 'reactstrap';
 
-class Page404 extends Component {
+class Page404Container extends Component {
     render() {
         return (
             <div className="app flex-row align-items-center">
@@ -49,4 +49,4 @@ class Page404 extends Component {
     }
 }
 
-export default Page404;
+export default Page404Container;

@@ -13,7 +13,7 @@ import {
     Row
 } from 'reactstrap';
 
-class Register extends Component {
+class RegisterForm extends Component {
     render() {
         return (
             <div className="app flex-row align-items-center">
@@ -89,4 +89,4 @@ class Register extends Component {
     }
 }
 
-export default Register;
+export default RegisterForm;
