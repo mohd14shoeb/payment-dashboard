@@ -60,7 +60,7 @@ class LoginContainer extends Component {
             localStorage.setItem('id_token', token);
             window.location = '/';
             // to improve experience use history push
-            // this.props.history.push('/dashboard')
+            // this.props.history.push('/home')
         } else {
             let errors = {};
             errors.password = 'Username or password is incorrect.';

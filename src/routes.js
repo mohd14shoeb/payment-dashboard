@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Dashboard = React.lazy(() => import('./layouts/Dashboard/Dashboard'));
+const Home = React.lazy(() => import('./components/Home/Home'));
 
 // https://github.com/ReactTraining/react-router/tree/master/packages/react-router-config
 const routes = [
     { path: '/login', exact: true, name: 'Home' },
-    { path: '/dashboard', name: 'Dashboard', component: Dashboard }
+    { path: '/home', name: 'Dashboard', component: Home }
 ];
 
 export default routes;
