@@ -3,7 +3,12 @@ export default {
         {
             name: 'Dashboard',
             url: '/home',
-            icon: 'icon-speedometer'
+            icon: 'icon-home'
+        },
+        {
+            name: 'Users',
+            url: '/users',
+            icon: 'icon-user'
         }
     ]
 };

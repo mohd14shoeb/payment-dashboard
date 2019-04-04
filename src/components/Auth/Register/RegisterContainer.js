@@ -1,20 +1,54 @@
 import React, { Component } from 'react';
-import {
-    Button,
-    Card,
-    CardBody,
-    Col,
-    Container,
-    Form,
-    Input,
-    InputGroup,
-    InputGroupAddon,
-    InputGroupText,
-    Row
-} from 'reactstrap';
+import { Card, CardBody, Col, Container, Row } from 'reactstrap';
+import RegisterForm from './RegisterForm';
 
-class RegisterForm extends Component {
+class RegisterContainer extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: '',
+            email: '',
+            password: '',
+            confirmpassword: '',
+            errors: {}
+        };
+    }
+
+    handleChange = e => {
+        const { name, value } = e.target;
+
+        this.setState({
+            [name]: value
+        });
+        let errors = {};
+        if (name === 'email') {
+            if (!value) {
+                errors.email = 'Required';
+            } else if (
+                !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(value)
+            ) {
+                errors.email = 'Invalid email address';
+            }
+        }
+        this.setState({
+            errors: errors
+        });
+    };
+
+    handleSubmit(event) {
+        event.preventDefault();
+        console.log('email', this.state.email);
+        window.location = '/email-password-reset-link';
+    }
+
     render() {
+        const {
+            username,
+            email,
+            password,
+            confirmpassword,
+            errors
+        } = this.state;
         return (
             <div className="app flex-row align-items-center">
                 <Container>
@@ -22,63 +56,15 @@ class RegisterForm extends Component {
                         <Col md="9" lg="7" xl="6">
                             <Card className="mx-4">
                                 <CardBody className="p-4">
-                                    <Form>
-                                        <h1>Register</h1>
-                                        <p className="text-muted">
-                                            Create your account
-                                        </p>
-                                        <InputGroup className="mb-3">
-                                            <InputGroupAddon addonType="prepend">
-                                                <InputGroupText>
-                                                    <i className="icon-user" />
-                                                </InputGroupText>
-                                            </InputGroupAddon>
-                                            <Input
-                                                type="text"
-                                                placeholder="Username"
-                                                autoComplete="username"
-                                            />
-                                        </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroupAddon addonType="prepend">
-                                                <InputGroupText>
-                                                    @
-                                                </InputGroupText>
-                                            </InputGroupAddon>
-                                            <Input
-                                                type="text"
-                                                placeholder="Email"
-                                                autoComplete="email"
-                                            />
-                                        </InputGroup>
-                                        <InputGroup className="mb-3">
-                                            <InputGroupAddon addonType="prepend">
-                                                <InputGroupText>
-                                                    <i className="icon-lock" />
-                                                </InputGroupText>
-                                            </InputGroupAddon>
-                                            <Input
-                                                type="password"
-                                                placeholder="Password"
-                                                autoComplete="new-password"
-                                            />
-                                        </InputGroup>
-                                        <InputGroup className="mb-4">
-                                            <InputGroupAddon addonType="prepend">
-                                                <InputGroupText>
-                                                    <i className="icon-lock" />
-                                                </InputGroupText>
-                                            </InputGroupAddon>
-                                            <Input
-                                                type="password"
-                                                placeholder="Repeat password"
-                                                autoComplete="new-password"
-                                            />
-                                        </InputGroup>
-                                        <Button color="success" block>
-                                            Create Account
-                                        </Button>
-                                    </Form>
+                                    <RegisterForm
+                                        onClick={this.handleSubmit.bind(this)}
+                                        onChange={this.handleChange}
+                                        username={username}
+                                        email={email}
+                                        password={password}
+                                        confirmpassword={confirmpassword}
+                                        errors={errors}
+                                    />
                                 </CardBody>
                             </Card>
                         </Col>
@@ -89,4 +75,4 @@ class RegisterForm extends Component {
     }
 }
 
-export default RegisterForm;
+export default RegisterContainer;

@@ -12,10 +12,10 @@ const Login = React.lazy(() =>
     import('./components/Auth/Login/LoginContainer')
 );
 const ForgotPassword = React.lazy(() =>
-    import('./components/Auth/ForgotPassword/EmailForm')
+    import('./components/Auth/ForgotPassword/ForgotPasswordContainer')
 );
 const Register = React.lazy(() =>
-    import('./components/Auth/Register/RegisterForm')
+    import('./components/Auth/Register/RegisterContainer')
 );
 const Page404 = React.lazy(() =>
     import('./components/Errors/Page404/Page404Container')
