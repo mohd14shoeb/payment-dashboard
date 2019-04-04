@@ -40,6 +40,13 @@
     "underscore": "^1.9.1"
   },
   "devDependencies": {
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "husky": "^0.14.3",
+    "lint-staged": "^8.1.5",
+    "prettier": "^1.16.4",
     "react-scripts": "^2.1.8"
   },
   "scripts": {
@@ -48,7 +55,20 @@
     "test": "react-scripts test",
     "test:cov": "react-scripts test --coverage",
     "test:debug": "react-scripts --inspect-brk test --runInBand",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write \"src/**/*.js\"",
+    "precommit": "npm run lint:staged",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --fix",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint:staged": "lint-staged",
+    "pretty": "prettier --write --tab-width 4 \"**/*.js\""
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "npm run pretty",
+      "git add"
+    ]
   },
   "eslintConfig": {
     "extends": "react-app"

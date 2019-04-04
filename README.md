@@ -8,6 +8,6 @@ npm install
 npm start
 ```
 
-### login 
+### login.js 
 * Email: `admin@admin.com`
 * password: `123456789`
