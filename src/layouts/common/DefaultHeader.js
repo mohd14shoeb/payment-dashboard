@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
-import {
-    DropdownItem,
-    DropdownMenu,
-    DropdownToggle,
-    Nav,
-    NavItem
-} from 'reactstrap';
+import { DropdownItem, DropdownMenu, DropdownToggle, Nav } from 'reactstrap';
 import PropTypes from 'prop-types';
 
 import {
@@ -47,13 +40,13 @@ class DefaultHeader extends Component {
                 />
                 <AppSidebarToggler className="d-md-down-none" display="lg" />
 
-                <Nav className="d-md-down-none" navbar>
-                    <NavItem className="px-3">
-                        <NavLink to="/home" className="nav-link">
-                            Dashboard
-                        </NavLink>
-                    </NavItem>
-                </Nav>
+                {/*<Nav className="d-md-down-none" navbar>*/}
+                {/*<NavItem className="px-3">*/}
+                {/*<NavLink to="/home" className="nav-link">*/}
+                {/*Dashboard*/}
+                {/*</NavLink>*/}
+                {/*</NavItem>*/}
+                {/*</Nav>*/}
                 <Nav className="ml-auto" navbar>
                     <AppHeaderDropdown direction="down">
                         <DropdownToggle nav>

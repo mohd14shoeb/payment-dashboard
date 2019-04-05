@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, CardTitle, Col, Row } from 'reactstrap';
+import { Col, Row } from 'reactstrap';
+import { WelcomeWidget } from './WelcomeWidget';
 
 class HomeContainer extends Component {
     constructor(props) {
@@ -13,14 +14,7 @@ class HomeContainer extends Component {
             <div className="animated fadeIn">
                 <Row>
                     <Col>
-                        <Card>
-                            <CardHeader>
-                                <CardTitle>
-                                    <h2>Home</h2>
-                                </CardTitle>
-                            </CardHeader>
-                            <CardBody>Welcome .....</CardBody>
-                        </Card>
+                        <WelcomeWidget />
                     </Col>
                 </Row>
             </div>
