@@ -2,7 +2,7 @@ import React, { Component, Suspense } from 'react';
 import { Redirect, Route, Switch, withRouter } from 'react-router-dom';
 import { Container } from 'reactstrap';
 
-import { loading } from './../../components/layouts';
+import { loading } from './../../components/loading';
 
 import {
     AppAside,
@@ -71,7 +71,7 @@ class DefaultLayout extends Component {
                                             />
                                         ) : null;
                                     })}
-                                    <Redirect from="/" to="/dashboard" />
+                                    <Redirect from="/" to="/home" />
                                 </Switch>
                             </Suspense>
                         </Container>

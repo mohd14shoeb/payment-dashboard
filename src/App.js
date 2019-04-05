@@ -2,26 +2,26 @@ import React, { Component } from 'react';
 import { Route, Switch, Redirect, BrowserRouter } from 'react-router-dom';
 import './App.scss';
 
-import { loading } from './components/layouts';
+import { loading } from './components/loading';
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layouts'));
 
 // Pages
 const Login = React.lazy(() =>
-    import('./components/acquirerpay/Auth/Login/LoginContainer')
+    import('./components/Auth/Login/LoginContainer')
 );
 const ForgotPassword = React.lazy(() =>
-    import('./components/acquirerpay/Auth/ForgotPassword/EmailForm')
+    import('./components/Auth/ForgotPassword/ForgotPasswordContainer')
 );
 const Register = React.lazy(() =>
-    import('./components/acquirerpay/Auth/Register/RegisterForm')
+    import('./components/Auth/Register/RegisterContainer')
 );
 const Page404 = React.lazy(() =>
-    import('./components/acquirerpay/Errors/Page404/Page404Container')
+    import('./components/Errors/Page404/Page404Container')
 );
 const Page500 = React.lazy(() =>
-    import('./components/acquirerpay/Errors/Page500/Page500Container')
+    import('./components/Errors/Page500/Page500Container')
 );
 
 const RestrictedRoute = ({ component: Component, isLoggedIn, ...rest }) => (
@@ -60,12 +60,12 @@ class App extends Component {
     render() {
         let isLoggedIn = this.state.isLoggedIn;
         if (window.location.pathname === '/login' && isLoggedIn) {
-            window.location = '/dashboard';
-            // this.props.history.push('/dashboard')
+            window.location = '/home';
+            // this.props.history.push('/home')
         }
         if (window.location.pathname === '/' && isLoggedIn) {
-            window.location = '/dashboard';
-            // this.props.history.push('/dashboard')
+            window.location = '/home';
+            // this.props.history.push('/home')
         }
         return (
             <BrowserRouter>

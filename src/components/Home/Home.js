@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, CardTitle, Col, Row } from 'reactstrap';
 
-class Dashboard extends Component {
+class Home extends Component {
     constructor(props) {
         super(props);
 
@@ -16,10 +16,10 @@ class Dashboard extends Component {
                         <Card>
                             <CardHeader>
                                 <CardTitle>
-                                    <h2>Dashboard</h2>
+                                    <h2>Home</h2>
                                 </CardTitle>
                             </CardHeader>
-                            <CardBody>Future conents comes here.</CardBody>
+                            <CardBody>Welcome .....</CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -28,4 +28,4 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+export default Home;
