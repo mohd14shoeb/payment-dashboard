@@ -1,6 +1,6 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom';
-// import Home from './home';
+// import HomeContainer from './home';
 // import { shallow } from 'enzyme'
 
 // jest.mock('react-chartjs-2', () => ({
@@ -10,12 +10,12 @@
 
 // it('renders without crashing', () => {
 //   const div = document.createElement('div');
-//   ReactDOM.render(<Home />, div);
+//   ReactDOM.render(<HomeContainer />, div);
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
 // it('renders without crashing', () => {
-//   shallow(<Home />);
+//   shallow(<HomeContainer />);
 // });
 
 it('', () => {});

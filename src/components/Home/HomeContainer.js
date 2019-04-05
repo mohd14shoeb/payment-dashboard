@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, CardBody, CardHeader, CardTitle, Col, Row } from 'reactstrap';
 
-class Users extends Component {
+class HomeContainer extends Component {
     constructor(props) {
         super(props);
 
@@ -16,10 +16,10 @@ class Users extends Component {
                         <Card>
                             <CardHeader>
                                 <CardTitle>
-                                    <h2>Users</h2>
+                                    <h2>Home</h2>
                                 </CardTitle>
                             </CardHeader>
-                            <CardBody>Users Crud</CardBody>
+                            <CardBody>Welcome .....</CardBody>
                         </Card>
                     </Col>
                 </Row>
@@ -28,4 +28,4 @@ class Users extends Component {
     }
 }
 
-export default Users;
+export default HomeContainer;

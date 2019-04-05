@@ -1,6 +1,6 @@
 // import React from 'react';
 // import ReactDOM from 'react-dom';
-// import Users from './users';
+// import UserContainer from './users';
 // import { shallow } from 'enzyme'
 
 // jest.mock('react-chartjs-2', () => ({
@@ -10,12 +10,12 @@
 
 // it('renders without crashing', () => {
 //   const div = document.createElement('div');
-//   ReactDOM.render(<Users />, div);
+//   ReactDOM.render(<UserContainer />, div);
 //   ReactDOM.unmountComponentAtNode(div);
 // });
 
 // it('renders without crashing', () => {
-//   shallow(<Users />);
+//   shallow(<UserContainer />);
 // });
 
 it('', () => {});
